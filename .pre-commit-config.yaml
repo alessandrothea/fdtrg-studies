@@ -1,8 +1,11 @@
 repos:
+  # Manual only: uvx pre-commit run --hook-stage manual nbstripout --all-files
+  # Drop `stages` to run it on every commit again.
   - repo: https://github.com/kynan/nbstripout
     rev: 0.7.1
     hooks:
       - id: nbstripout
+        stages: [manual]
 
   - repo: local
     hooks:
@@ -14,5 +17,5 @@ repos:
           without dragging a dependency on the rest of the split (see
           MIGRATION_PLAN_v2.md section 3, rule 3).
         language: pygrep
-        entry: '^\s*(import|from)\s+dunetrg_(data|emu|analysis)\b'
+        entry: '^\s*(import\s+dunetrg\.(data|emu|analysis)\b|from\s+dunetrg(\.(data|emu|analysis)\b|\s+import\s+.*\b(data|emu|analysis)\b))'
         files: ^scripts/fdtrg_report/.*\.py$

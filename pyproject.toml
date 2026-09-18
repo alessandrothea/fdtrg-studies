@@ -43,4 +43,4 @@ package = false
 #   make dev-link      (make dev-unlink to go back)
 #   uv run --with-editable ../dunetrg <command>
 [tool.uv.sources]
-dunetrg = { git = "file:///Users/ale/Development/dune/trigger-studies/reorganization/mark_4/dunetrg", rev = "v0.1.0" }
+dunetrg = { path = "/Users/ale/Development/dune/trigger-studies/reorganization/test/dunetrg", editable = true }

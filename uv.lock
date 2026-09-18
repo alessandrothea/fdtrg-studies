@@ -771,7 +771,7 @@ wheels = [
 [[package]]
 name = "dunetrg"
 version = "0.1.0"
-source = { git = "file:///Users/ale/Development/dune/trigger-studies/reorganization/mark_4/dunetrg?rev=v0.1.0#36533e6a592d97dc20a0b85eeb2a626df93a78b5" }
+source = { editable = "/Users/ale/Development/dune/trigger-studies/reorganization/test/dunetrg" }
 dependencies = [
     { name = "awkward" },
     { name = "numpy" },
@@ -796,6 +796,38 @@ all = [
     { name = "scikit-learn" },
     { name = "scipy" },
     { name = "tqdm" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "awkward", specifier = ">=2.8.3" },
+    { name = "boost-histogram", marker = "extra == 'analysis'", specifier = ">=1.5.2" },
+    { name = "click", marker = "extra == 'analysis'", specifier = ">=8.2.1" },
+    { name = "click", marker = "extra == 'emu'", specifier = ">=8.2.1" },
+    { name = "cmocean", marker = "extra == 'analysis'", specifier = ">=4.0.3" },
+    { name = "dunetrg", extras = ["emu", "analysis"], marker = "extra == 'all'" },
+    { name = "hist", marker = "extra == 'analysis'", specifier = ">=2.9.0" },
+    { name = "matplotlib", marker = "extra == 'analysis'", specifier = ">=3.10.3" },
+    { name = "mpl-axes-aligner", marker = "extra == 'analysis'", specifier = ">=1.3" },
+    { name = "mplhep", marker = "extra == 'analysis'", specifier = ">=0.4.0" },
+    { name = "numba", marker = "extra == 'emu'", specifier = ">=0.63.1" },
+    { name = "numpy", specifier = ">=2.3.4" },
+    { name = "pandas", specifier = ">=2.2.3" },
+    { name = "particle", marker = "extra == 'analysis'", specifier = ">=0.26.0" },
+    { name = "pydantic", specifier = ">=2.12.5" },
+    { name = "pyyaml", specifier = ">=6.0" },
+    { name = "rich", specifier = ">=14.1.0" },
+    { name = "scikit-learn", marker = "extra == 'emu'", specifier = ">=1.8.0" },
+    { name = "scipy", marker = "extra == 'emu'", specifier = ">=1.16.0" },
+    { name = "tqdm", marker = "extra == 'emu'", specifier = ">=4.67.1" },
+    { name = "uproot", specifier = ">=5.6.2" },
+]
+provides-extras = ["emu", "analysis", "all"]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "import-linter", specifier = ">=2.15" },
+    { name = "pytest", specifier = ">=8.4.1" },
 ]
 
 [[package]]
@@ -853,7 +885,7 @@ dependencies = [
 requires-dist = [
     { name = "awkward" },
     { name = "click" },
-    { name = "dunetrg", extras = ["all"], git = "file:///Users/ale/Development/dune/trigger-studies/reorganization/mark_4/dunetrg?rev=v0.1.0" },
+    { name = "dunetrg", extras = ["all"], editable = "/Users/ale/Development/dune/trigger-studies/reorganization/test/dunetrg" },
     { name = "fpdf2" },
     { name = "hist" },
     { name = "iminuit" },
