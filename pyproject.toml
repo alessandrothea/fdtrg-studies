@@ -1,0 +1,46 @@
+[project]
+name = "fdtrg-studies"
+version = "0.1.0"
+description = "DUNE trigger-primitive validation studies: notebooks, marimo apps, and report scripts."
+requires-python = ">=3.13"
+dependencies = [
+    "dunetrg[all]",
+    # report toolkit (scripts/fdtrg_report)
+    "fpdf2",
+    "mistletoe",
+    # analysis / plotting stack used directly by notebooks, marimo apps, and scripts
+    "awkward",
+    "click",
+    "hist",
+    "iminuit",
+    "ipython",
+    "matplotlib",
+    "mplhep",
+    "numpy",
+    "pandas",
+    "plotly",
+    "pyyaml",
+    "rich",
+    "scipy",
+    "tabulate",
+    "tqdm",
+    "uproot",
+    # notebook / marimo tooling
+    "ipykernel",
+    "ipympl",
+    "ipywidgets",
+    "jupyterlab",
+    "marimo",
+    "nbformat",
+    "nbstripout",
+]
+
+[tool.uv]
+package = false
+
+# dunetrg is one package with data, emu and analysis submodules; [all] pulls
+# the optional extras the notebooks need. To develop against a local checkout:
+#   make dev-link      (make dev-unlink to go back)
+#   uv run --with-editable ../dunetrg <command>
+[tool.uv.sources]
+dunetrg = { git = "file:///Users/ale/Development/dune/trigger-studies/reorganization/mark_4/dunetrg", rev = "v0.1.0" }

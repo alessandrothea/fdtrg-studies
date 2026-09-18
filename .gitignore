@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# uv / venv
+.venv/
+venv/
+
+# Data / outputs produced by running the studies (never committed)
+*.root
+*.pdf
+reports/
+tmp/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# marimo
+__marimo__/
+
+# OS / editor cruft
+.DS_Store

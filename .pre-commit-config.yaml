@@ -1,0 +1,18 @@
+repos:
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.7.1
+    hooks:
+      - id: nbstripout
+
+  - repo: local
+    hooks:
+      - id: fdtrg-report-no-library-imports
+        name: scripts/fdtrg_report must not import dunetrg.data/dunetrg.emu/dunetrg.analysis (rule 3)
+        description: >
+          Keeps scripts/fdtrg_report/ free of imports from the dunetrg.data, dunetrg.emu
+          and dunetrg.analysis libraries, so it can be moved to its own repo later
+          without dragging a dependency on the rest of the split (see
+          MIGRATION_PLAN_v2.md section 3, rule 3).
+        language: pygrep
+        entry: '^\s*(import|from)\s+dunetrg_(data|emu|analysis)\b'
+        files: ^scripts/fdtrg_report/.*\.py$
