@@ -43,13 +43,13 @@ notebook or marimo app that needs the report toolkit has to add `scripts/` to
 
 ## Data
 
-Data is external, at `$TPV_DATA_ROOT` (the directory that used to be
+Data is external, at `$DTRG_DATA_ROOT` (the directory that used to be
 `tpvalidator/data/`). `dunetrg.data.datacatalogue` resolves relative dataset
 directories against it directly, so pass paths like `'vd/1x8x14/preprod'`
 (no leading `data/`) to `load()` / `load_datasets()` / etc.
 
 Some paths inherited from `tpvalidator` don't resolve cleanly under
-`TPV_DATA_ROOT` today (stale directory names, or files that live outside the
+`DTRG_DATA_ROOT` today (stale directory names, or files that live outside the
 `vd/`/`hd/` tree). These are marked `# TODO(migration): ...` in place — grep
 for that tag before assuming a notebook runs end-to-end.
 
@@ -64,6 +64,10 @@ uv run --with nbstripout nbstripout notebooks/**/*.ipynb
 ```
 
 Never commit executed notebooks with large embedded outputs (images, dataframes).
+
+To check notebooks run end-to-end, use `uv run python scripts/run_notebooks.py`
+(see README): it writes executed copies to `reports/notebooks/` and never
+modifies the sources.
 
 ## Import naming
 

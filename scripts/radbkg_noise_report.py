@@ -446,11 +446,11 @@ def main(tp_file_path : str, wf_file_path: str, event_range=None, make_figures:b
         write_report(figures_dir, report_dir / "radbkg_report.pdf")
 
 if __name__ == '__main__':
-    # TODO(migration): 'vd/bkg/100events' not found under TPV_DATA_ROOT; nearest
+    # TODO(migration): 'vd/bkg/100events' not found under DTRG_DATA_ROOT; nearest
     # matches are vd/1x8x6/bkg/100events/ and vd/1x8x6/bkg/100events_3sigma/
     # (this demo assumed the tpvalidator repo-root layout; no 1x8x14 equivalent
     # was found -- pick the right dataset before relying on this default).
-    tp_tree_file = str(Path(os.environ['TPV_DATA_ROOT']) / 'vd/bkg/100events/tptree_st_tpg_vd_radiols.root')
-    wf_file = str(Path(os.environ['TPV_DATA_ROOT']) / 'vd/bkg/100events/trigger_digits_waves_detsim_vd_radiols.root')
+    tp_tree_file = str(Path(os.environ['DTRG_DATA_ROOT']) / 'vd/bkg/100events/tptree_st_tpg_vd_radiols.root')
+    wf_file = str(Path(os.environ['DTRG_DATA_ROOT']) / 'vd/bkg/100events/trigger_digits_waves_detsim_vd_radiols.root')
 
     main(tp_tree_file, wf_file, event_range=(0, 10), interactive=False)

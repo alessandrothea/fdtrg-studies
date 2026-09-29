@@ -11,6 +11,9 @@ dist/
 .venv/
 venv/
 
+# machine-specific environment (DTRG_DATA_ROOT, ...)
+.env
+
 # Data / outputs produced by running the studies (never committed)
 *.root
 *.pdf

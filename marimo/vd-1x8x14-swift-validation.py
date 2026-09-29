@@ -31,7 +31,7 @@ def _():
 
 @app.cell
 def _():
-    dataset_dir = Path(os.environ['TPV_DATA_ROOT']) / 'vd/1x8x14/vdtf-prep/swift'
+    dataset_dir = Path(os.environ['DTRG_DATA_ROOT']) / 'vd/1x8x14/vdtf-prep/swift'
 
     datasets = {}
     for n in ['eminus', 'muminus', 'gamma', 'proton', 'neutron']:
